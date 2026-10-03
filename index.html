@@ -1,0 +1,202 @@
+<!-- aha-build-id: bmusnwtjozppn8a66 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>NEON ARC — Retro Cyberpunk Gaming</title>
+  <meta name="description" content="Drop into Neon Arc: CRT arenas, late-night raids, and a crew that still plays like 2089. Claim your jack-in tonight." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;800&family=Share+Tech+Mono&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #07060c;
+      --ink: #e8fff6;
+      --muted: #9cb8b0;
+      --accent: #00ff9c;
+      --hot: #ff2d95;
+      --line: rgba(0, 255, 156, 0.28);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { background: var(--bg); color: var(--ink); font-family: "Share Tech Mono", monospace; }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; }
+    .wrap { width: min(1120px, calc(100% - 40px)); margin: 0 auto; }
+    header {
+      position: sticky; top: 0; z-index: 20;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 16px 24px;
+      background: rgba(7,6,12,0.86);
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(10px);
+    }
+    .logo { font-family: Orbitron, sans-serif; font-weight: 800; letter-spacing: 0.18em; color: var(--accent); font-size: 14px; }
+    nav { display: flex; gap: 22px; font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; }
+    nav a { text-decoration: none; color: var(--muted); }
+    nav a:hover { color: var(--accent); }
+    .btn {
+      display: inline-block; text-decoration: none;
+      background: var(--accent); color: #04140d;
+      font-family: Orbitron, sans-serif; font-weight: 700;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      padding: 14px 22px; border: 0; cursor: pointer;
+      box-shadow: 6px 6px 0 var(--hot);
+    }
+    .btn:hover { transform: translate(-1px, -1px); }
+    .btn.ghost { background: transparent; color: var(--accent); border: 1px solid var(--accent); box-shadow: none; }
+    .hero {
+      min-height: 88vh;
+      position: relative;
+      display: grid;
+      align-items: end;
+      overflow: hidden;
+    }
+    .hero img {
+      position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;
+      filter: saturate(1.15) contrast(1.08);
+    }
+    .hero::after {
+      content: ""; position: absolute; inset: 0;
+      background: linear-gradient(180deg, rgba(7,6,12,0.15) 0%, rgba(7,6,12,0.88) 78%);
+    }
+    .hero-copy { position: relative; z-index: 1; padding: 72px 0 80px; }
+    .kicker { color: var(--accent); letter-spacing: 0.28em; font-size: 12px; margin-bottom: 16px; }
+    h1 {
+      font-family: Orbitron, sans-serif; font-size: clamp(36px, 7vw, 84px);
+      line-height: 0.95; max-width: 14ch; margin-bottom: 20px;
+    }
+    .lede { max-width: 52ch; color: var(--muted); font-size: 16px; line-height: 1.6; margin-bottom: 28px; }
+    section { padding: 88px 0; }
+    h2 { font-family: Orbitron, sans-serif; font-size: clamp(26px, 4vw, 40px); margin-bottom: 12px; }
+    .sub { color: var(--muted); max-width: 58ch; margin-bottom: 36px; line-height: 1.55; }
+    .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .card {
+      border: 1px solid var(--line); padding: 22px;
+      background: #0c0b14;
+    }
+    .card img { height: 180px; width: 100%; object-fit: cover; margin-bottom: 16px; }
+    .card h3 { font-family: Orbitron, sans-serif; font-size: 16px; margin-bottom: 8px; color: var(--accent); }
+    .card p { color: var(--muted); font-size: 14px; line-height: 1.5; }
+    .proof { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+    .quote { border-left: 3px solid var(--accent); padding: 8px 0 8px 18px; }
+    .quote p { margin-bottom: 12px; line-height: 1.55; }
+    .who { display: flex; align-items: center; gap: 12px; color: var(--muted); font-size: 13px; }
+    .who img { width: 40px; height: 40px; border-radius: 50%; object-fit: cover; }
+    .cta-band {
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      background: #0a0912;
+    }
+    form { display: grid; gap: 12px; max-width: 420px; }
+    input {
+      background: #07060c; border: 1px solid var(--line); color: var(--ink);
+      padding: 14px 12px; font: inherit;
+    }
+    .note { color: var(--muted); font-size: 12px; margin-top: 10px; }
+    .ok { display: none; color: var(--accent); margin-top: 12px; }
+    footer { padding: 32px 0 48px; color: var(--muted); font-size: 12px; display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+    @media (max-width: 800px) {
+      nav { display: none; }
+      .grid, .proof { grid-template-columns: 1fr; }
+      .hero { min-height: 78vh; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">NEON ARC</div>
+    <nav>
+      <a href="#arenas">Arenas</a>
+      <a href="#proof">Crew</a>
+      <a href="#jack">Jack In</a>
+    </nav>
+    <a class="btn" href="#jack">Jack In</a>
+  </header>
+
+  <section class="hero" id="top">
+    <img alt="Rain-slick neon alley with magenta and cyan signs reflecting on wet pavement at night" src="https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&w=1800&q=80" />
+    <div class="wrap hero-copy">
+      <p class="kicker">Sector 9 // Night shift servers</p>
+      <h1>PLAY LIKE THE GRID NEVER WENT DARK.</h1>
+      <p class="lede">Neon Arc is a retro cyberpunk gaming club for CRT raids, synthwave nights, and ranked runs that still smell like hot plastic and rain. Drop in. Stay loud.</p>
+      <a class="btn" href="#jack">Claim your jack-in</a>
+    </div>
+  </section>
+
+  <section id="arenas">
+    <div class="wrap">
+      <h2>Four rooms. One grid.</h2>
+      <p class="sub">Pick a lane tonight. Every arena runs on original cabinets, restored boards, and live brackets until 4 a.m.</p>
+      <div class="grid">
+        <article class="card">
+          <img alt="Close-up of a glowing arcade cabinet joystick and neon buttons" src="https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&w=900&q=80" />
+          <h3>CRT Arena</h3>
+          <p>Scanlines, scanlines, scanlines. Street Fighter cabinets, shmups, and a queue that actually respects first coin.</p>
+        </article>
+        <article class="card">
+          <img alt="Dim LAN party with multiple monitors glowing in a dark room" src="https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=900&q=80" />
+          <h3>Night Raid LAN</h3>
+          <p>Friday 10 p.m. lock-in. 24 stations, cold drinks, and a prize pool paid in credit and bragging rights.</p>
+        </article>
+        <article class="card">
+          <img alt="Hands on a mechanical keyboard with RGB lighting in a dark setup" src="https://images.unsplash.com/photo-1593305841991-05c297ba4575?auto=format&fit=crop&w=900&q=80" />
+          <h3>Synthwave Nights</h3>
+          <p>Live DJ, racing cups, and a rooftop smoke break that looks like a movie still. No tourists after midnight.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="proof">
+    <div class="wrap">
+      <h2>The crew already jacked in.</h2>
+      <p class="sub">Regulars from District 4 to the docks. If you can hold a combo, you have a seat.</p>
+      <div class="proof">
+        <blockquote class="quote">
+          <p>“I came for the cabinets. I stayed because the Friday raid actually starts on time and nobody sandbags the bracket.”</p>
+          <div class="who">
+            <img alt="Portrait of Mira Chen" src="https://api.dicebear.com/9.x/adventurer/svg?seed=MiraChen" />
+            <span>Mira Chen · CRT captain</span>
+          </div>
+        </blockquote>
+        <blockquote class="quote">
+          <p>“Feels like 2089 without the pretension. Good lights, honest ping, and a bar that knows a rum and cola.”</p>
+          <div class="who">
+            <img alt="Portrait of Jax Ortega" src="https://api.dicebear.com/9.x/adventurer/svg?seed=JaxOrtega" />
+            <span>Jax Ortega · Night Raid</span>
+          </div>
+        </blockquote>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-band" id="jack">
+    <div class="wrap">
+      <h2>Jack in tonight.</h2>
+      <p class="sub">Drop your handle. We’ll hold a booth for the next open raid and ping you the door code. Demo signup — nothing is emailed yet.</p>
+      <form id="join">
+        <input type="text" name="handle" placeholder="Handle (e.g. GHOST_9)" required />
+        <input type="email" name="email" placeholder="Comms channel (email)" required />
+        <button class="btn" type="submit">Lock my seat</button>
+      </form>
+      <p class="ok" id="ok">Seat locked. See you on the grid.</p>
+      <p class="note">Open nightly 8 p.m.–4 a.m. · Warehouse 12, Rainline Docks</p>
+    </div>
+  </section>
+
+  <footer class="wrap">
+    <span>NEON ARC · Sector 9</span>
+    <span>Play loud. Leave the grid cleaner than you found it.</span>
+  </footer>
+  <script>
+    document.getElementById("join").addEventListener("submit", function (e) {
+      e.preventDefault();
+      document.getElementById("ok").style.display = "block";
+      e.target.reset();
+    });
+  </script>
+</body>
+</html>
+
+<script>/*aha-img-guard v2.1:user-relative-no-stock*/(function(){var API="https://skycastle.ai/api/img-search?q=";var bad=/images\.unsplash\.com|source\.unsplash\.com|picsum\.photos|loremflickr\.com|placekitten/;function tile(i){try{var d=document.createElement("div");d.style.cssText="width:100%;height:100%;min-height:120px;aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#e9dfd2,#cdb89a);color:#6b5d49;font:600 14px system-ui;text-align:center;padding:10px;box-sizing:border-box";d.textContent=i.getAttribute("alt")||"";if(i.parentNode)i.parentNode.replaceChild(d,i);}catch(e){}}function real(i){var q=(i.getAttribute("alt")||"").trim();if(!q){tile(i);return;}fetch(API+encodeURIComponent(q)).then(function(r){return r.json();}).then(function(d){if(d&&d.url){i.onerror=function(){tile(i);};i.src=d.url;}else tile(i);}).catch(function(){tile(i);});}function userRel(sa){return!!sa&&!/^https?:\/\//i.test(sa)&&!/^\/\//.test(sa)&&!/^data:/i.test(sa)&&!/^blob:/i.test(sa);}function chk(i){if(i.__ag)return;try{if(i.closest&&i.closest("nav,footer"))return;if(i.closest&&i.closest("header")&&/\b(logo|brand|icon|wordmark)\b/i.test(i.getAttribute("alt")||""))return;}catch(e){}var s=(i.currentSrc||i.src||i.getAttribute("src")||"").trim();var sa=(i.getAttribute("src")||"").trim();var alt=(i.getAttribute("alt")||"").trim();if(bad.test(s)){i.__ag=1;real(i);return;}if(/^https?:\/\//.test(s)){i.__ag=1;i.addEventListener("error",function(){real(i);});return;}if(!sa){if(alt){i.__ag=1;real(i);}return;}i.__ag=1;var fail=function(){if(userRel(sa))tile(i);else real(i);};if(i.complete&&i.naturalWidth===0){fail();return;}i.addEventListener("error",fail);}function scan(){document.querySelectorAll("img").forEach(chk);}try{new MutationObserver(scan).observe(document.documentElement,{childList:true,subtree:true,attributes:true,attributeFilter:["src"]});}catch(e){}document.addEventListener("DOMContentLoaded",scan);window.addEventListener("load",function(){scan();setTimeout(scan,800);setTimeout(scan,2000);});})();</script>
